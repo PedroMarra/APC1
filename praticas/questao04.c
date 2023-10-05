@@ -3,17 +3,25 @@ Faça um programa que C que calcule os impostos incluídos no preço de um produ
   */
 
 #include <stdio.h>
-int main(){
-  
-  float icms = 0.17;
-  float cofins = 0.0766;
-  float pis_pasep = 0.0165;
-  float um = 1.0;
-float preco_inicial = 120;
 
-  float preco_final =  (um + icms + cofins + pis_pasep)  * preco_inicial;
+#define ICMS 0.17
+#define COFINS 0.076
+#define PIS_PASEP 0.0165
+
+int main(){
+  float preco_inicial = 120.f;
+  
+ float  icms = preco_inicial * ICMS;
+ float  cofins = preco_inicial * COFINS;
+ float pis_pasep = PIS_PASEP;
+ int um = 1;
+
+
+  float preco_final =  (1 + ICMS + COFINS + PIS_PASEP)  * preco_inicial;
 
   printf("O preço final do produto, incluindo impostos, é R$ %f\n", preco_final);
-
+  printf("O valor do ICMS é%f\n",  preco_inicial * ICMS);
+  printf("O valor do COFINS é %f\n",  preco_inicial * COFINS);
+  printf("O valor do PIS_PASEP é %f\n", preco_inicial *PIS_PASEP);
   return 0;
 }
